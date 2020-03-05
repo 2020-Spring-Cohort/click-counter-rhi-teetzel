@@ -26,9 +26,45 @@ describe('Cookie Counter Game', function(){
                 sut.handleClick();
                 expect(sut.getClickCount()).toBe(1);
             })
+        
+        })
+
+        describe('Click Companion', function(){
+
+            describe('addCompanion', function(){
+                it('should be able to add a companion', function(){
+                    sut.clicksRecorded = 100;
+                    sut.addCompanion();
+                    expect(sut.companionCount).toBe(1);
+                })
+
+                it('should deduct cost of companion from clicksRecorded', function(){
+                    sut.clicksRecorded = 100;
+                    sut.addCompanion();
+                    expect(sut.clicksRecorded).toBe(0);
+                })
+
+                it('should increase cost of companion by 10% each time one is purchased', function(){
+                    sut.clicksRecorded = 100;
+                    sut.addCompanion();
+                    expect(sut.companionCost).toBe(110)
+                })
+            })
+
+            describe('getCompanionCount', function(){
+                it('should return number of companions', function(){
+                    sut.clicksRecorded = 100;
+                    sut.addCompanion();
+                    expect(sut.getCompanionCount()).toBe(1);
+                })
+            })
+
+
 
             
         })
+
+    
 
 
 
