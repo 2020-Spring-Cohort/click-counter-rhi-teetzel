@@ -13,46 +13,45 @@ describe('Cookie Counter Game', function(){
 
         beforeEach(function(){
             sut = new ClickCounter();
-            clicksRecorded = 0;
+            clickCount = 0;
         })
 
         describe('handleClick', function(){
             it('should record 1 for 1 click', function(){
                 sut.handleClick();
-                expect(sut.clicksRecorded).toBe(1);
+                expect(sut.clickCount).toBe(1);
             })
 
             it('should return 1 for 1 click', function(){
                 sut.handleClick();
                 expect(sut.getClickCount()).toBe(1);
             })
-        
         })
 
         describe('Click Companion', function(){
 
             describe('addCompanion', function(){
                 it('should be able to add a companion', function(){
-                    sut.clicksRecorded = 100;
+                    sut.clickCount = 100;
                     sut.addCompanion();
                     expect(sut.companionCount).toBe(1);
                 })
 
-                it('should deduct cost of companion from clicksRecorded', function(){
-                    sut.clicksRecorded = 100;
+                it('should deduct cost of companion from clickCount', function(){
+                    sut.clickCount = 100;
                     sut.addCompanion();
-                    expect(sut.clicksRecorded).toBe(0);
+                    expect(sut.clickCount).toBe(0);
                 })
 
                 
                 it('should increase cost of companion by 10% each time one is purchased', function(){
-                    sut.clicksRecorded = 100;
+                    sut.clickCount = 100;
                     sut.addCompanion();
                     expect(sut.companionCost).toBe(110)
                 })
 
                 it('should not allow user to buy companion without enough clicks', function(){
-                    sut.clicksRecorded = 90;
+                    sut.clickCount = 90;
                     sut.addCompanion();
                     expect(sut.companionCount).toBe(0)
                 })
@@ -60,7 +59,7 @@ describe('Cookie Counter Game', function(){
 
             describe('getCompanionCount', function(){
                 it('should return number of companions', function(){
-                    sut.clicksRecorded = 100;
+                    sut.clickCount = 100;
                     sut.addCompanion();
                     expect(sut.getCompanionCount()).toBe(1);
                 })
@@ -68,25 +67,52 @@ describe('Cookie Counter Game', function(){
 
             describe('increaseCompanionCost', function(){
                 it('should increase companion cost by 10%', function(){
-                    sut.clicksRecorded = 100;
+                    sut.clickCount = 100;
                     sut.increaseCompanionCost();
                     expect(sut.companionCost).toBe(110)
 
                 })
-
             })
 
-            describe('addCompanionCountToClicksRecorded', function(){
+            xdescribe('addCompanionCountToclickCount', function(){
                 it('should add companion number to click number', function(){
-                    sut.clicksRecorded = 100;
+                    sut.clickCount = 100;
                     sut.addCompanion();
-                    sut.addCompanionCountToClicksRecorded();
-                    expect(sut.clicksRecorded).toBe(1);
+                    sut.addCompanionCountToclickCount();
+                    expect(sut.clickCount).toBe(1);
                 })
             })
+        })
 
-
+        describe('CollectiveCulminationCompounder', function(){
             
+            describe('addCompounder', function(){
+                it('should add 1 compounder to compounderNumber', function(){
+                    sut.clickCount = 100;
+                    sut.addCompounder();
+                    expect(sut.compounderNumber).toBe(1);
+                })
+
+                it('should deduct 10 from clickcount', function(){
+                    sut.clickCount = 100;
+                    sut.addCompounder();
+                    expect(sut.clickCount).toBe(90);
+                })
+
+                it('should increase compounderCost by 10%', function(){
+                    sut.clickCount = 100;
+                    sut.addCompounder();
+                    expect(sut.compounderCost).toBe(11);
+                })
+            })          
+
+            describe('getCompounderNumber', function(){
+                it('should return number of compounders', function(){
+                    sut.clickCount = 100;
+                    sut.addCompounder();                    
+                    expect(sut.getCompounderNumber()).toBe(1);
+                })
+            })
         })
 
     
