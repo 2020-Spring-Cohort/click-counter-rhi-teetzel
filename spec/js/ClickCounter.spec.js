@@ -44,6 +44,7 @@ describe('Cookie Counter Game', function(){
                     expect(sut.clicksRecorded).toBe(0);
                 })
 
+                
                 it('should increase cost of companion by 10% each time one is purchased', function(){
                     sut.clicksRecorded = 100;
                     sut.addCompanion();
@@ -65,6 +66,15 @@ describe('Cookie Counter Game', function(){
                 })
             })
 
+            describe('increaseCompanionCost', function(){
+                it('should increase companion cost by 10%', function(){
+                    sut.clicksRecorded = 100;
+                    sut.increaseCompanionCost();
+                    expect(sut.companionCost).toBe(110)
+
+                })
+
+            })
 
 
             

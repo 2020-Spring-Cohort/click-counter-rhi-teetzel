@@ -22,9 +22,13 @@ class ClickCounter{
         if(this.clicksRecorded >= this.companionCost){
             this.clicksRecorded -= this.companionCost; 
             this.companionCount++;
-            this.companionCost += this.companionCost * .1;
+            this.increaseCompanionCost();
         }
         
+    }
+
+    increaseCompanionCost(){
+        this.companionCost += this.companionCost * .1;
     }
 
     
