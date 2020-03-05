@@ -76,6 +76,15 @@ describe('Cookie Counter Game', function(){
 
             })
 
+            describe('addCompanionCountToClicksRecorded', function(){
+                it('should add companion number to click number', function(){
+                    sut.clicksRecorded = 100;
+                    sut.addCompanion();
+                    sut.addCompanionCountToClicksRecorded();
+                    expect(sut.clicksRecorded).toBe(1);
+                })
+            })
+
 
             
         })

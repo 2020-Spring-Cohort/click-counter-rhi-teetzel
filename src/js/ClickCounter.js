@@ -7,7 +7,7 @@ class ClickCounter{
     }
     
     handleClick(){
-        this.clicksRecorded++;
+        this.clicksRecorded += 1;
     }
     
     getClickCount(){
@@ -24,12 +24,17 @@ class ClickCounter{
             this.companionCount++;
             this.increaseCompanionCost();
         }
-        
     }
 
     increaseCompanionCost(){
         this.companionCost += this.companionCost * .1;
     }
+
+    addCompanionCountToClicksRecorded(){
+        this.clicksRecorded = this.companionCount + this.clicksRecorded;
+    }
+
+
 
     
 
