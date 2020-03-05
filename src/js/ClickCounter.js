@@ -1,6 +1,18 @@
-let clicksRecorded=0;
+class ClickCounter{
 
-const handleClick = function(){
-    clicksRecorded+=1;
-    return clicksRecorded;
+    constructor(){
+        this.clicksRecorded = 0;
+    }
+    
+    handleClick(){
+        this.clicksRecorded++;
+    }
+    
+    getClickCount(){
+        return this.clicksRecorded;
+    }
+
+    
+
 }
+

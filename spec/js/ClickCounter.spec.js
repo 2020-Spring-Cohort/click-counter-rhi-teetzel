@@ -9,18 +9,25 @@
 
 describe('Cookie Counter Game', function(){
 
+    let sut;
+
+        beforeEach(function(){
+            sut = new ClickCounter();
+            clicksRecorded = 0;
+        })
+
         describe('handleClick', function(){
             it('should record 1 for 1 click', function(){
-                handleClick();
-                expect(clicksRecorded).toBe(1);
+                sut.handleClick();
+                expect(sut.clicksRecorded).toBe(1);
             })
 
-            it('should record 3 for 3 clicks', function(){
-                handleClick();
-                handleClick();
-                handleClick();
-                expect(clicksRecorded).toBe(3);
+            it('should return 1 for 1 click', function(){
+                sut.handleClick();
+                expect(sut.getClickCount()).toBe(1);
             })
+
+            
         })
 
 
