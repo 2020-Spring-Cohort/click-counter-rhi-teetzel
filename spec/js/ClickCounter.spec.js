@@ -49,6 +49,12 @@ describe('Cookie Counter Game', function(){
                     sut.addCompanion();
                     expect(sut.companionCost).toBe(110)
                 })
+
+                it('should not allow user to buy companion without enough clicks', function(){
+                    sut.clicksRecorded = 90;
+                    sut.addCompanion();
+                    expect(sut.companionCount).toBe(0)
+                })
             })
 
             describe('getCompanionCount', function(){
