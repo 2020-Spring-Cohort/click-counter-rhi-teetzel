@@ -74,12 +74,20 @@ describe('Cookie Counter Game', function(){
                 })
             })
 
-            xdescribe('addCompanionCountToclickCount', function(){
-                it('should add companion number to click number', function(){
+            describe('addCompanionCountToClickCount', function(){
+                it('should add companion count to click count', function(){
                     sut.clickCount = 100;
                     sut.addCompanion();
-                    sut.addCompanionCountToclickCount();
+                    sut.addCompanionCountToClickCount();
                     expect(sut.clickCount).toBe(1);
+                })
+
+                it('should add companion count to click value for total click count', function(){
+                    sut.clickCount = 110;
+                    sut.addCompanion();
+                    sut.addCompounder();
+                    sut.addCompanionCountToClickCount();
+                    expect(sut.clickValue).toBe(1.2);
                 })
             })
         })
@@ -99,10 +107,17 @@ describe('Cookie Counter Game', function(){
                     expect(sut.clickCount).toBe(90);
                 })
 
-                it('should increase compounderCost by 10%', function(){
+                it('add compounder should increase compounderCost by 10%', function(){
                     sut.clickCount = 100;
                     sut.addCompounder();
                     expect(sut.compounderCost).toBe(11);
+                })
+
+                it('should not allow user to buy compounder without 10 clickcount', function(){
+                    sut.clickCount = 9;
+                    sut.addCompounder();
+                    expect(sut.compounderNumber).toBe(0);
+
                 })
             })          
 
@@ -111,6 +126,14 @@ describe('Cookie Counter Game', function(){
                     sut.clickCount = 100;
                     sut.addCompounder();                    
                     expect(sut.getCompounderNumber()).toBe(1);
+                })
+            })
+
+            describe('increaseClickValue', function(){
+                it('should increase click value by 20%', function(){
+                    sut.clickCount = 1;
+                    sut.increaseClickValue();
+                    expect(sut.clickValue).toBe(1.2);
                 })
             })
         })
