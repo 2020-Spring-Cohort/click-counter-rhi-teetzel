@@ -63,10 +63,10 @@ class ClickCounter{
 
 }
 
-const appCookieCount = new ClickCounter();
+const appClickCounter = new ClickCounter();
 
-const updateClickCount = (clickCount, appCookieClicker)=>{
-    clickCount.innerText = appCookieClicker.getClickCount();
+const updateClickCount = (clickCount, appClickCounter)=>{
+    clickCount.innerText = appClickCounter.getClickCount();
 }
 
 

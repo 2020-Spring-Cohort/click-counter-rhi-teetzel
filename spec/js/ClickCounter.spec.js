@@ -141,7 +141,7 @@ describe('Cookie Counter Game', function(){
 });
 
 describe('app.js manipulates DOM', () => {
-    let testCookieClicker;
+    let sut;
     let testClickHandler;
     let testClickCount;
     let testCompanionBuy;
@@ -150,9 +150,9 @@ describe('app.js manipulates DOM', () => {
     let testCompounderCount;
 
     beforeEach(() => {
-        
+        testClickCounter = new ClickCounter();
         testClickHandler = document.createElement('button');
-        testClickCounter = document.createElement('div');
+        testClickCount = document.createElement('div');
         testCompanionBuy = document.createElement('button');
         testCompanionCount = document.createElement('div');
         testCompounderBuy = document.createElement('button');
@@ -160,7 +160,7 @@ describe('app.js manipulates DOM', () => {
 })
     describe('main click functions', ()=>{
         it('should show 0 in testClickCount element before any clicks are performed',()=>{
-            updateClickCount(testClickCount, testCookieClicker);
+            updateClickCount(testClickCount, testClickCounter);
             expect(testClickCount.innerText).toBe('0');
         })
     })
