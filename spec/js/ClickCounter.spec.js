@@ -163,5 +163,10 @@ describe('app.js manipulates DOM', () => {
             updateClickCount(testClickCount, testClickCounter);
             expect(testClickCount.innerText).toBe('0');
         })
+        it('should show 1 in testClickCount element after one click is performed', ()=>{
+            testClickCounter.handleClick();
+            updateClickCount(testClickCount, testClickCounter);
+            expect(testClickCount.innerText).toBe('1');
+        })
     })
 });
