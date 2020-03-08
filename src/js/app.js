@@ -65,12 +65,20 @@ function showAboutMe(){
     else{
         aboutMe.style.display = "block"
     }
+}
 
+function showAboutCompany(){
+    if(aboutCompany.style.display === "block"){
+        aboutCompany.style.display = "none"
+    }
+    else{
+        aboutCompany.style.display = "block"
+    }
 }
     
 const appClickCounter = new ClickCounter();
 const aboutMe = document.getElementById("about-Me");
-const aboutCompany = document.getElementById("aboutCompany");
+const aboutCompany = document.getElementById("about-Company");
 const resetButton = document.querySelector('.reset-button');
 const clickCount = document.querySelector('.click-count');
 const cookieButton = document.querySelector('.cookie-button');
