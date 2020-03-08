@@ -51,8 +51,7 @@ describe('app.js manipulates DOM', () => {
             expect(testClickCounter.getCompanionCount()).toBe(1);
         })
         it('should update innerText of testCompanionCount after companion added', () => {
-            testClickCounter.clickCount = 100;
-            makeCompanionButton(testCompanionButton, testCompanionCount, testCompanionCost, testClickCounter);
+            testClickCounter.clickCount = 100;           
             testCompanionButton.click();
             expect(testCompanionCount.innerText).toBe('1');
         })
@@ -76,13 +75,20 @@ describe('app.js manipulates DOM', () => {
             expect(testClickCounter.getCompounderCount()).toBe(1);
         })
         it('should update innerText of testCompounderCount after compounder added', () => {
-
+            testClickCounter.clickCount = 10;
+            testCompounderButton.click();
+            expect(testCompounderCount.innerText).toBe('1');
         })
         it('should deduct clicks from testClickCount when compounder is bought', () => {
-
+            testClickCounter.clickCount = 10;
+            testCompounderButton.click();
+            expect(testClickCounter.getClickCount()).toBe(0);
         })
         it('should increase compounderCost by 10% after addCompounder is clicked', () => {
-
+            testClickCounter.clickCount = 10;
+            testClickCounter.addCompounder();
+            updateCompounderCost(testCompounderCost, testClickCounter);
+            expect(testCompounderCost.innerText).toBe('11');
         })
     })
     

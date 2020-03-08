@@ -13,11 +13,11 @@ const updateCompanionCost = (companionCost, appClickCounter) => {
 }
 
 const updateCompounderCount = (compounderCount, appClickCounter) => {
-    compounderCount.innerTest = appClickCounter.getCompounderCount();
+    compounderCount.innerText = appClickCounter.getCompounderCount();
 }
 
 const updateCompounderCost = (compounderCost, appClickCounter) => {
-    compounderCost.innerTest = appClickCounter.getCompounderCost();
+    compounderCost.innerText = appClickCounter.getCompounderCost();
 }
 
 const makeClickButton = (cookieButton, clickCount, appClickCounter) => {
