@@ -24,6 +24,8 @@ const makeClickButton = (cookieButton, clickCount, appClickCounter) => {
     cookieButton.addEventListener('click', function(){
         appClickCounter.handleClick();
         updateClickCount(clickCount, appClickCounter);
+        enableCompanionButton();
+        enableCompounderButton();
     })
 }
 
@@ -32,6 +34,8 @@ const makeCompanionButton = (companionButton, companionCount, companionCost, app
         appClickCounter.addCompanion();
         updateCompanionCount(companionCount, appClickCounter);
         updateCompanionCost(companionCost, appClickCounter);
+        enableCompanionButton();
+        enableCompounderButton();
     })
 }
 
@@ -40,6 +44,8 @@ const makeCompounderButton = (compounderButton, compounderCount, compounderCost,
         appClickCounter.addCompounder();
         updateCompounderCount(compounderCount, appClickCounter);
         updateCompounderCost(compounderCost, appClickCounter);
+        enableCompanionButton();
+        enableCompounderButton();
     })
 }
 
@@ -48,6 +54,8 @@ const autoClicker = setInterval(autoClick, 1000);
 function autoClick(){
     appClickCounter.addCompanionCountToClickCount();
     updateClickCount(clickCount, appClickCounter);
+    enableCompanionButton();
+    enableCompounderButton();
 }
 
 
@@ -73,6 +81,24 @@ function showAboutCompany(){
     }
     else{
         aboutCompany.style.display = "block"
+    }
+}
+
+function enableCompounderButton() {
+    if (appClickCounter.clickCount >= appClickCounter.compounderCost) {
+        compounderButton.removeAttribute('disabled')
+    } 
+    else {
+        compounderButton.disabled = true
+    }
+}
+
+function enableCompanionButton() {
+    if (appClickCounter.clickCount >= appClickCounter.companionCost) {
+        companionButton.removeAttribute('disabled')
+    } 
+    else {
+        companionButton.disabled = true
     }
 }
     

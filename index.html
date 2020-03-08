@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookie Clicker</title>
+    <link rel="stylesheet" href="/src/css/style.css">
 </head>
 
 
@@ -37,30 +38,30 @@
             <section class="cookie-clicker">
                 <span class="item-header">CURRENT CLICKS: </span>
                 <div style="display: inline" class="click-count">0</div>
-            </br>
-                <button class="cookie-button">COOKIE</button>
+                </br>
+                <button onclick="enableCompounderButton(); enableCompanionButton()" class="cookie-button"><img src="src/img/cookie.png" alt="Cookie"></button>
             </section>
 
             <section class="companion">
                 <span class="item-header">CURRENT HELPERS: </span>
                 <div style="display: inline" class="companion-count">0</div>
-            </br>
+                </br>
                 <span class="item-header">YOU NEED </span>
                 <div style="display: inline" class="companion-cost">100</div>
                 <span class="item-header">CLICKS TO HIRE A HELPER!</span>
-            </br>
-                <button class="companion-button">HIRE GRANDMA</button>
+                </br>
+                <button class="companion-button" disabled>HIRE GRANDMA</button>
             </section>
 
             <section class="compounder">
                 <span class="item-header">CURRENT MULTIPLIERS: </span>
                 <div style="display: inline" class="compounder-count">0</div>
-            </br>
+                </br>
                 <span class="item-header">YOU NEED </span>
                 <div style="display: inline" class="compounder-cost">10</div>
                 <span class="item-header">CLICKS TO PURCHASE A MULTIPLIER!</span>
-            </br>
-                <button class="compounder-button">BUY MULTIPLIER</button>
+                </br>
+                <button class="compounder-button" disabled>BUY MULTIPLIER</button>
             </section>
 
             <section class="reset">

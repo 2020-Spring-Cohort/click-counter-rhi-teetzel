@@ -13,10 +13,10 @@ class ClickCounter {
     handleClick() {
         this.clickCount = this.clickValue + this.clickCount;
     }
+    
     getClickCount() {
         return this.clickCount;
     }
-
 
     addCompanion() {
         if (this.clickCount >= this.companionCost) {
