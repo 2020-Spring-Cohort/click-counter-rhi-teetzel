@@ -95,10 +95,10 @@ describe('Cookie Counter Game', function () {
     describe('CollectiveCulminationCompounder', function () {
 
         describe('addCompounder', function () {
-            it('should add 1 compounder to compounderNumber', function () {
+            it('should add 1 compounder to compounderCount', function () {
                 sut.clickCount = 100;
                 sut.addCompounder();
-                expect(sut.compounderNumber).toBe(1);
+                expect(sut.compounderCount).toBe(1);
             })
 
             it('should deduct 10 from clickcount', function () {
@@ -116,16 +116,16 @@ describe('Cookie Counter Game', function () {
             it('should not allow user to buy compounder without 10 clickcount', function () {
                 sut.clickCount = 9;
                 sut.addCompounder();
-                expect(sut.compounderNumber).toBe(0);
+                expect(sut.compounderCount).toBe(0);
 
             })
         })
 
-        describe('getCompounderNumber', function () {
+        describe('getCompounderCount', function () {
             it('should return number of compounders', function () {
                 sut.clickCount = 100;
                 sut.addCompounder();
-                expect(sut.getCompounderNumber()).toBe(1);
+                expect(sut.getCompounderCount()).toBe(1);
             })
         })
 
@@ -140,44 +140,3 @@ describe('Cookie Counter Game', function () {
 
 });
 
-describe('app.js manipulates DOM', () => {
-    let sut;
-    let testClickHandler;
-    let testClickCount;
-    let testCompanionBuy;
-    let testCompanionCount;
-    let testCompounderBuy;
-    let testCompounderCount;
-
-    beforeEach(() => {
-        testClickCounter = new ClickCounter();
-        testClickHandler = document.createElement('button');
-        testClickCount = document.createElement('div');
-        testCompanionBuy = document.createElement('button');
-        testCompanionCount = document.createElement('div');
-        testCompounderBuy = document.createElement('button');
-        testCompounderCount = document.createElement('div');
-        makeClickButton(testClickHandler, testClickCount, testClickCounter);
-    })
-    describe('main click functions', () => {
-        it('should show 0 in testClickCount element before any clicks are performed', () => {
-            updateClickCount(testClickCount, testClickCounter);
-            expect(testClickCount.innerText).toBe('0');
-        })
-        it('should show 1 in testClickCount element after one click is performed', () => {
-            testClickCounter.handleClick();
-            updateClickCount(testClickCount, testClickCounter);
-            expect(testClickCount.innerText).toBe('1');
-        })
-        describe('makeClickButton() deploys with each click', () => {
-            it('should update testClickCount after button is clicked', () => {
-                testClickHandler.click();
-                expect(testClickCounter.getClickCount()).toBe(1);
-            })
-            it('should update innerText testClickCount after button is clicked', () => {
-                testClickHandler.click();
-                expect(testClickCount.innerText).toBe('1');
-            })
-        })
-    })
-});
