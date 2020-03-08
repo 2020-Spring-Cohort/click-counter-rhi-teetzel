@@ -67,9 +67,12 @@ class ClickCounter {
     increaseClickValue() {
         this.clickValue = this.clickValue + this.clickValue * .2;
     }
-
-
 }
+
+
+
+
+
 
 
 

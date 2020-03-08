@@ -50,6 +50,28 @@ function autoClick(){
     updateClickCount(clickCount, appClickCounter);
 }
 
+
+
+const makeResetButton = (resetButton) => {
+    resetButton.addEventListener('click', function(){
+        location.reload();
+    })
+}
+
+function showAboutMe(){
+    if(aboutMe.style.display === "block") {
+        aboutMe.style.display = "none"
+    }
+    else{
+        aboutMe.style.display = "block"
+    }
+
+}
+    
+const appClickCounter = new ClickCounter();
+const aboutMe = document.getElementById("about-Me");
+const aboutCompany = document.getElementById("aboutCompany");
+const resetButton = document.querySelector('.reset-button');
 const clickCount = document.querySelector('.click-count');
 const cookieButton = document.querySelector('.cookie-button');
 
@@ -60,11 +82,12 @@ const companionButton = document.querySelector('.companion-button');
 const compounderCount = document.querySelector('.compounder-count');
 const compounderButton = document.querySelector('.compounder-button');
 const compounderCost = document.querySelector('.compounder-cost');
-const appClickCounter = new ClickCounter();
+
 
 makeClickButton(cookieButton, clickCount, appClickCounter);
 makeCompanionButton(companionButton, companionCount, companionCost, appClickCounter);
 makeCompounderButton(compounderButton, compounderCount, compounderCost, appClickCounter);
+makeResetButton(resetButton, appClickCounter);
 updateClickCount(clickCount, appClickCounter);
 updateCompanionCount(companionCount, appClickCounter);
 updateCompanionCost(companionCost, appClickCounter);
