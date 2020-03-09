@@ -1,0 +1,145 @@
+*{
+    font-family: 'Baloo 2';
+    line-height: 1.618em;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #421D01;
+    
+}
+
+body{
+    background-image: url('/src/img/plaid.jpg');
+    background-position: top;
+    background-attachment: fixed;
+    background-size: cover;
+    
+}
+
+.pageTitle{
+    text-align: center;
+    margin: 2em;
+}
+
+header{
+    text-align: center;
+    margin: 1em;
+}
+
+h1{
+    font-family: 'Pacifico';
+    font-size: 75px;
+}
+
+#tagline{
+    font-size: 24px;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+.container{
+    display: grid;    
+    grid-template-columns: 1fr 1fr;
+    border: 3px solid #421D01;  
+    border-radius: 15px;
+    margin: 0 12em 0 12em;
+    padding: 2em;    
+    background: palegoldenrod;
+}
+
+.cookie-clicker{
+    margin: 1em auto 0 auto;
+    width: 50%;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.click-count{
+    font-size: 60px;
+    text-align: center;
+}
+
+.click-value{
+    text-align: center;
+}
+
+.companion{
+    display: grid;
+    grid-template-rows: auto;
+    justify-content: space-around;
+}
+
+
+.compounder{
+    display: grid;
+    grid-template-rows: auto;
+    justify-content: space-around;
+}
+
+
+
+.cookie-button img{
+    
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    border: 0;
+    
+}
+
+.cookie-button{
+    background: none;
+    border: 0;
+    cursor: pointer;
+    outline: none;
+    
+}
+
+
+.cookie-button:active{
+  transform: translateY(4px);
+  outline: none;
+}
+
+.info{
+    position: absolute;
+    background: palegoldenrod;
+    border: 3px dashed white;
+    border-radius: 15px;
+    width: 350px;
+    height: 250px;
+    padding: 2em;
+    left: 50%;
+    margin-left: -175px;
+    color: #421D01;
+    text-align: center;
+}
+
+.reset{
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+
+
+.action-button{
+    background: rgb(228, 174, 74);
+    color: #421D01;
+    border-radius: 15px;
+    padding: .5em;  
+    max-width: 200px;
+    min-width: 150px;
+    font-weight: bolder;
+    cursor: pointer;
+    outline: none;
+}
+
+
+.action-button:disabled{
+    opacity: 0.3;
+}

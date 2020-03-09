@@ -1,14 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module 4 Project</title>
+    <title>Cookie Clicker</title>
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+2|Pacifico&display=swap" rel="stylesheet">
 </head>
+
+
 <body>
-    <div class="container">
-        <div class="anchor"></div>
+
+    <header>
+        <nav>
+            <a href="https://orteil.dashnet.org/cookieclicker/" target="_blank"><button class="action-button">ORIGINAL GAME</button></a>
+            <button onclick="showAboutMe()" class="action-button">ABOUT DEVELOPER</button>
+            <button onclick="showAboutCompany()" class="action-button">ABOUT COMPANY</button>
+            <button class="action-button" id="reset-button">START OVER</button>
+        </nav>
+    </header>
+
+    <div class="pageTitle">
+        <h1>Grandma's Cookies</h1>
+        <span id="tagline">You can't have just <em>one</em>...</span>
     </div>
-    <script src="/src/ClickCounter.js"></script>
+
+    <section id="about-Me" class="info" hidden>
+        <p>Rhianna Teetzel is an apprentice software developer at We Can Code IT in Cleveland, Ohio. She has hand-crafted this stunning replica of the classic "Cookie Clicker" game, for your enjoyment.</p>
+        </br>
+        <a href="https://rhi-teetzel.github.io" target="_blank">Portfolio</a> | 
+        <a href="https://github.com/rhi-teetzel" target="_blank">Github</a>    
+    </section>
+
+    <section id="about-Company" class="info" hidden>
+        <p>Coo Coo Computing Challengers is a company that spends more time creating alliterative puns than actually writing software and we need help. Please call us. </p>
+        </br>
+        <p>1-800-PLS-HELP</p> 
+              
+        <a href="https://shutupandtakemymoney.com" target="_blank">Also, Buy Our Stuff</a>
+    </section>
+
+    <main>        
+        <section class="cookie-clicker">            
+            <button onclick="enableCompounderButton(); enableCompanionButton()" class="cookie-button"><img src="src/img/cookie.png" alt="Cookie"></button>
+            <div class="click-count">0</div>
+            <div class="click-value">1</div>
+        </section>
+
+        <div class="container">            
+            <section class="companion">
+                <span class="item-header">CURRENT HELPERS: </span>
+                <div class="companion-count">0</div>
+                </br>
+                <div class="companion-cost">100</div>
+                <span class="item-header">CLICKS NEEDED TO HIRE A HELPER</span>
+                </br>
+                <button class="action-button" id="companion-button" disabled>HIRE GRANDMA</button>
+            </section>
+
+            <section class="compounder">
+                <span class="item-header">CURRENT MULTIPLIERS: </span>
+                <div class="compounder-count">0</div>
+                </br>
+                <div class="compounder-cost">10</div>
+                <span class="item-header">CLICKS NEEDED TO PURCHASE A MULTIPLIER</span>
+                </br>
+                <button class="action-button" id="compounder-button" disabled>BUY MULTIPLIER</button>
+            </section>
+
+        </main>           
+    </div>
+    
+    <script src="/src/js/ClickCounter.js"></script>
+    <script src="/src/js/app.js"></script>
 </body>
+
 </html>

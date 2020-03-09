@@ -12,14 +12,34 @@
     <script src="lib/jasmine-3.5.0/jasmine-html.js"></script>
     <script src="lib/jasmine-3.5.0/boot.js"></script>
 
-
 </head>
 
-<body>
-    <!-- include source files here... -->
-    <script src="./src/js/ClickCounter.js"></script>
-    <!-- include spec files here... -->
-    <script src="./spec/js/ClickCounter.spec.js"></script>
+<body><div class="container">
+    <main>
+        <section class="cookie-clicker">
+            <div class="click-count">0 clicks</div>
+            <button class="cookie-button">CLICK ME</button>
+        </section>
+
+        <section class="companion">
+            <div class="companion-count">0 companions</div>
+            <div class="companion-cost">COST: 100 clicks</div>
+            <button class="companion-button">BUY COMPANION</button>
+        </section>
+
+        <section class="compounder">
+            <div class="compounder-count">0 compounders</div>
+            <div class="compounder-cost">COST: 10 clicks</div>
+            <button class="compounder-button">BUY COMPOUNDER</button>
+        </section>
+    </main>
+</div>
+
+<script src="./src/js/ClickCounter.js"></script>
+<script src="./src/js/app.js"></script>
+
+<script src="./spec/js/ClickCounter.spec.js"></script>
+<script src="./spec/js/app.spec.js"></script>
 </body>
 
 </html>
