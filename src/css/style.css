@@ -45,22 +45,22 @@ nav{
 .container{
     display: grid;    
     grid-template-columns: 1fr 1fr;
-    border: 3px solid black;  
+    border: 3px solid #421D01;  
     border-radius: 15px;
-    margin: 1em 10em 0 10em;
+    margin: 0 12em 0 12em;
     padding: 2em;    
     background: palegoldenrod;
 }
 
 .cookie-clicker{
-    margin: 3em auto 1em auto;
+    margin: 1em auto 0 auto;
     width: 50%;
     border-radius: 15px;
     padding: 10px;
 }
 
 .click-count{
-    font-size: 40px;
+    font-size: 60px;
     text-align: center;
 }
 
