@@ -1,4 +1,5 @@
 *{
+    font-family: 'Baloo 2';
     line-height: 1.618em;
     box-sizing: border-box;
     margin: 0;
@@ -6,9 +7,17 @@
     
 }
 
+body{
+    background-image: url('/src/img/plaid.jpg');
+    background-position: top;
+    background-attachment: fixed;
+    background-size: cover;
+    
+}
+
 .pageTitle{
     text-align: center;
-    margin: 1em;
+    margin: 2em;
 }
 
 header{
@@ -16,8 +25,17 @@ header{
     margin: 1em;
 }
 
+h1{
+    font-family: 'Pacifico';
+    font-size: 75px;
+}
+
+#tagline{
+    font-size: 24px;
+}
+
 nav{
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
@@ -28,15 +46,13 @@ nav{
     grid-template-columns: 1fr 1fr;
     border: 3px solid black;  
     border-radius: 15px;
-    margin: 5em 5em 0 5em;
-    padding: 2em;
-    text-align: center;
+    margin: 1em 10em 0 10em;
+    padding: 2em;    
 }
 
 .cookie-clicker{
-    margin: 3em auto;
+    margin: 3em auto 1em auto;
     width: 50%;
-    border: 3px solid black;
     border-radius: 15px;
     padding: 10px;
 }
@@ -49,27 +65,39 @@ nav{
 .companion{
     display: grid;
     grid-template-rows: auto;
+    justify-content: space-around;
 }
 
 
 .compounder{
     display: grid;
     grid-template-rows: auto;
+    justify-content: space-around;
 }
 
 
 
 .cookie-button img{
-    display: block;
+    
     margin-left: auto;
     margin-right: auto;
     width: 40%;
+    border: 0;
+    
 }
 
 .cookie-button{
     background: none;
-    border: none;
+    border: 0;
+    cursor: pointer;
+    outline: none;
     
+}
+
+
+.cookie-button:active{
+  transform: translateY(4px);
+  outline: none;
 }
 
 .info{
@@ -82,11 +110,23 @@ nav{
     margin-bottom: 2em;
 }
 
+
+
 .action-button{
-    color: blue;
+    background: rgb(228, 174, 74);
+    color: #421D01;
     border-radius: 15px;
-    padding: .5em;
-    margin: 1em;  
+    padding: .5em;  
+    max-width: 200px;
+    min-width: 150px;
+    font-weight: bolder;
+    cursor: pointer;
+    outline: none;
+}
+
+.action-button:hover{
+    background: 
+
 }
 
 .action-button:disabled{
