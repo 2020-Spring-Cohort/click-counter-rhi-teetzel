@@ -64,6 +64,10 @@ nav{
     text-align: center;
 }
 
+.click-value{
+    text-align: center;
+}
+
 .companion{
     display: grid;
     grid-template-rows: auto;

@@ -23,6 +23,7 @@ class ClickCounter {
             this.clickCount = this.clickCount - this.companionCost;
             this.companionCount++;
             this.increaseCompanionCost();
+            this.increaseClickValue();
         }
     }
 
@@ -66,6 +67,10 @@ class ClickCounter {
 
     increaseClickValue() {
         this.clickValue = this.clickValue + this.clickValue * .2;
+    }
+
+    getClickValue() {
+        return this.clickValue;
     }
 }
 

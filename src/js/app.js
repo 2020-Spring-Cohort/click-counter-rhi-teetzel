@@ -20,6 +20,10 @@ const updateCompounderCost = (compounderCost, appClickCounter) => {
     compounderCost.innerText = Math.round(appClickCounter.getCompounderCost());
 }
 
+const updateClickValue = (clickValue, appClickCounter) => {
+    clickValue.innerText = (appClickCounter.getClickValue().toFixed(2)) + " cookies per click!";
+}
+
 const makeClickButton = (cookieButton, clickCount, appClickCounter) => {
     cookieButton.addEventListener('click', function(){
         appClickCounter.handleClick();
@@ -44,6 +48,7 @@ const makeCompounderButton = (compounderButton, compounderCount, compounderCost,
         appClickCounter.addCompounder();
         updateCompounderCount(compounderCount, appClickCounter);
         updateCompounderCost(compounderCost, appClickCounter);
+        updateClickValue(clickValue, appClickCounter);
         enableCompanionButton();
         enableCompounderButton();
     })
@@ -117,6 +122,8 @@ const compounderCount = document.querySelector('.compounder-count');
 const compounderButton = document.querySelector('#compounder-button');
 const compounderCost = document.querySelector('.compounder-cost');
 
+const clickValue = document.querySelector('.click-value');
+
 
 makeClickButton(cookieButton, clickCount, appClickCounter);
 makeCompanionButton(companionButton, companionCount, companionCost, appClickCounter);
@@ -126,3 +133,4 @@ updateClickCount(clickCount, appClickCounter);
 updateCompanionCount(companionCount, appClickCounter);
 updateCompanionCost(companionCost, appClickCounter);
 updateCompounderCount(compounderCount, appClickCounter);
+updateClickValue(clickValue, appClickCounter);
