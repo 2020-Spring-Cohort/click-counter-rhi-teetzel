@@ -1,3 +1,94 @@
+*{
+    line-height: 1.618em;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.pageTitle{
+    text-align: center;
+    margin: 1em;
+}
+
+header{
+    text-align: center;
+    margin: 1em;
+}
+
+nav{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+.container{
+    display: grid;    
+    grid-template-columns: 1fr 1fr;
+    border: 3px solid black;  
+    border-radius: 15px;
+    margin: 5em 5em 0 5em;
+    padding: 2em;
+    text-align: center;
+}
+
+.cookie-clicker{
+    margin: 3em auto;
+    width: 50%;
+    border: 3px solid black;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.click-count{
+    font-size: 40px;
+    text-align: center;
+}
+
+.companion{
+    display: grid;
+    grid-template-rows: auto;
+}
+
+
+.compounder{
+    display: grid;
+    grid-template-rows: auto;
+}
+
+
+
 .cookie-button img{
-    width: 40vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.cookie-button{
+    background: none;
+    border: none;
+    
+}
+
+.info{
+    position: absolute;
+    background: lavender;
+}
+
+.reset{
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.action-button{
+    color: blue;
+    border-radius: 15px;
+    padding: .5em;
+    margin: 1em;  
+}
+
+.action-button:disabled{
+    opacity: 0.3;
 }

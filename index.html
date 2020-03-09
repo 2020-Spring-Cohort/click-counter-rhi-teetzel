@@ -13,13 +13,16 @@
 
     <header>
         <nav>
-            <a href="https://orteil.dashnet.org/cookieclicker/" target="_blank"><button>Original Game</button></a>
-            <button onclick="showAboutMe()" id="aboutMeLink">About Developer</button>
-            <button onclick="showAboutCompany()" id="aboutCompanyLink">About Company</button>
+            <a href="https://orteil.dashnet.org/cookieclicker/" target="_blank"><button class="action-button">Original Game</button></a>
+            <button onclick="showAboutMe()" class="action-button">About Developer</button>
+            <button onclick="showAboutCompany()" class="action-button">About Company</button>
         </nav>
     </header>
-    <h1>COOKIE CLICKER RE-RUN</h1>
-    <span>Like watching your favorite episode of Friends for the 800th time: It's just never as good as the first.</span>
+
+    <div class="pageTitle">
+        <h1>COOKIE CLICKER RE-RUN</h1>
+        <span>Like watching your favorite episode of Friends for the 800th time: It's just never as good as the first.</span>
+    </div>
 
     <section id="about-Me" class="info" hidden>
         <p>Rhianna Teetzel is an apprentice software developer at We Can Code IT in Cleveland, Ohio. She has hand-crafted this stunning replica of the classic "Cookie Clicker" game, for your enjoyment.</p>
@@ -33,41 +36,39 @@
         <a href="https://shutupandtakemymoney.com" target="_blank">Also, Buy Our Stuff</a>
     </section>
 
-    <div class="container">
-        <main>
-            <section class="cookie-clicker">
-                <span class="item-header">CURRENT CLICKS: </span>
-                <div style="display: inline" class="click-count">0</div>
-                </br>
-                <button onclick="enableCompounderButton(); enableCompanionButton()" class="cookie-button"><img src="src/img/cookie.png" alt="Cookie"></button>
-            </section>
+    <main>        
+        <section class="cookie-clicker">            
+            <button onclick="enableCompounderButton(); enableCompanionButton()" class="cookie-button"><img src="src/img/cookie.png" alt="Cookie"></button>
+            <div class="click-count">0</div>
+        </section>
 
+        <div class="container">            
             <section class="companion">
                 <span class="item-header">CURRENT HELPERS: </span>
-                <div style="display: inline" class="companion-count">0</div>
+                <div class="companion-count">0</div>
                 </br>
                 <span class="item-header">YOU NEED </span>
-                <div style="display: inline" class="companion-cost">100</div>
+                <div class="companion-cost">100</div>
                 <span class="item-header">CLICKS TO HIRE A HELPER!</span>
                 </br>
-                <button class="companion-button" disabled>HIRE GRANDMA</button>
+                <button class="action-button" id="companion-button" disabled>HIRE GRANDMA</button>
             </section>
 
             <section class="compounder">
                 <span class="item-header">CURRENT MULTIPLIERS: </span>
-                <div style="display: inline" class="compounder-count">0</div>
+                <div class="compounder-count">0</div>
                 </br>
                 <span class="item-header">YOU NEED </span>
-                <div style="display: inline" class="compounder-cost">10</div>
+                <div class="compounder-cost">10</div>
                 <span class="item-header">CLICKS TO PURCHASE A MULTIPLIER!</span>
                 </br>
-                <button class="compounder-button" disabled>BUY MULTIPLIER</button>
+                <button class="action-button" id="compounder-button" disabled>BUY MULTIPLIER</button>
             </section>
 
-            <section class="reset">
-                <button class="reset-button">START OVER</button>
-            </section>
         </main>
+            <section class="reset">
+                    <button class="action-button" id="reset-button">START OVER</button>
+            </section>
     </div>
     
     <script src="/src/js/ClickCounter.js"></script>
