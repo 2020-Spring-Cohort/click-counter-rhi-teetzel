@@ -1,23 +1,23 @@
 
 
 const updateClickCount = (clickCount, appClickCounter) => {
-    clickCount.innerText = appClickCounter.getClickCount();
+    clickCount.innerText = Math.round(appClickCounter.getClickCount());     
 }
 
 const updateCompanionCount = (companionCount, appClickCounter) => {
-    companionCount.innerText = appClickCounter.getCompanionCount();
+    companionCount.innerText = Math.round(appClickCounter.getCompanionCount());
 }
 
 const updateCompanionCost = (companionCost, appClickCounter) => {
-    companionCost.innerText = appClickCounter.getCompanionCost();
+    companionCost.innerText = Math.round(appClickCounter.getCompanionCost());
 }
 
 const updateCompounderCount = (compounderCount, appClickCounter) => {
-    compounderCount.innerText = appClickCounter.getCompounderCount();
+    compounderCount.innerText = Math.round(appClickCounter.getCompounderCount());
 }
 
 const updateCompounderCost = (compounderCost, appClickCounter) => {
-    compounderCost.innerText = appClickCounter.getCompounderCost();
+    compounderCost.innerText = Math.round(appClickCounter.getCompounderCost());
 }
 
 const makeClickButton = (cookieButton, clickCount, appClickCounter) => {
